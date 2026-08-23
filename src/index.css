@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./assets/Bogart-Medium-trial.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --font-custom: "CustomFont", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-ink: #161514;
+  --color-ink-soft: #232120;
+  --color-paper: #f7f5f2;
+  --color-paper-dim: #efebe3;
+  --color-gold: #c49a5b;
+  --color-gold-soft: #d9bd8e;
+  --color-ash: #8b8680;
+  --color-ash-light: #b8b3ac;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
