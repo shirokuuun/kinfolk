@@ -9,16 +9,16 @@
 }
 
 @theme {
-  --font-custom: "CustomFont", sans-serif;
+  --font-main: "CustomFont", sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
+  --color-primary: #dadada;
+  --color-primary-dark: #888d8f;
   --color-ink: #161514;
   --color-ink-soft: #232120;
   --color-paper: #f7f5f2;
   --color-paper-dim: #efebe3;
-  --color-gold: #c49a5b;
-  --color-gold-soft: #d9bd8e;
   --color-ash: #8b8680;
   --color-ash-light: #b8b3ac;
 }
@@ -35,7 +35,7 @@ body {
 
 .label {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }

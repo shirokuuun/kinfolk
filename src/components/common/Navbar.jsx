@@ -28,15 +28,16 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-ink border-b border-white/5">
+    <header className="fixed top-0 inset-x-0 z-50 bg-ink border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-        <Link to="/" className="flex flex-col leading-none gap-0.5">
-          <span className="font-custom italic font-bold text-2xl text-gold tracking-tight">
-            kinfolk
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <span className="font-main font-bold text-2xl text-paper tracking-tight">
+            Kinfolk
           </span>
-          <span className="label text-ash text-[8px]">Specialty Coffee</span>
         </Link>
 
+        {/* Desktop nav */}
         <nav className="hidden md:flex gap-8">
           {links.map((link) => (
             <Link
@@ -44,8 +45,8 @@ export default function Navbar() {
               to={link.to}
               className={`label text-[9px] transition-colors ${
                 location.pathname === link.to
-                  ? "text-gold"
-                  : "text-white hover:text-gold"
+                  ? "text-paper"
+                  : "text-ash hover:text-paper"
               }`}
             >
               {link.label}
@@ -53,6 +54,7 @@ export default function Navbar() {
           ))}
         </nav>
 
+        {/* Socials */}
         <div className="hidden md:flex items-center gap-4">
           <a
             href={business.social.instagram}
@@ -62,7 +64,7 @@ export default function Navbar() {
           >
             <InstagramIcon
               size={16}
-              className="text-ash hover:text-gold transition-colors"
+              className="text-ash hover:text-paper transition-colors"
             />
           </a>
           <a
@@ -73,13 +75,14 @@ export default function Navbar() {
           >
             <FacebookIcon
               size={16}
-              className="text-ash hover:text-gold transition-colors"
+              className="text-ash hover:text-paper transition-colors"
             />
           </a>
         </div>
 
+        {/* Mobile toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-paper"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
         >
@@ -87,16 +90,17 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile overlay */}
       {open && (
         <div className="fixed inset-0 bg-ink z-50 flex flex-col md:hidden">
-          <div className="h-16 flex items-center justify-between px-6 border-b border-white/5">
-            <span className="font-serif italic font-bold text-2xl text-gold">
-              kinfolk
+          <div className="h-16 flex items-center justify-between px-6 border-b border-white/10">
+            <span className="font-main font-bold text-2xl text-paper">
+              Kinfolk
             </span>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="text-white"
+              className="text-paper"
             >
               <X size={24} />
             </button>
@@ -106,8 +110,10 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`font-serif italic text-4xl ${
-                  location.pathname === link.to ? "text-gold" : "text-white"
+                className={`font-main text-4xl ${
+                  location.pathname === link.to
+                    ? "text-paper"
+                    : "text-ash-light"
                 }`}
               >
                 {link.label}

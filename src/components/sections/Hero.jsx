@@ -1,57 +1,55 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import heroImg from "../../assets/img1.jpg";
 
 export default function Hero() {
   return (
-    <section className="bg-ink pt-16">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-7 h-px bg-gold" />
-            <span className="label text-gold text-[9px]">Third Wave Coffee Club</span>
-          </div>
+    <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
+      {/* Background image */}
+      <img
+        src={heroImg}
+        alt="Kinfolk Specialty Coffee shop interior"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Dark overlay for legibility */}
+      <div className="absolute inset-0 bg-ink/70" />
 
-          <h1 className="font-serif font-bold text-white leading-[0.9] text-6xl md:text-7xl -tracking-wide mb-6">
-            brewing<br />
-            <em className="text-gold not-italic font-serif italic">connections</em>
-          </h1>
-
-          <p className="text-ash text-sm leading-relaxed max-w-xs mb-8">
-            Third wave specialty coffee where every cup tells a story.
-            Come for the coffee, stay for the community.
-          </p>
-
-          <div className="flex gap-3 flex-wrap">
-            <Link
-              to="/menu"
-              className="bg-gold text-ink px-7 py-3 label text-[10px] flex items-center gap-2 hover:bg-gold-soft transition-colors"
-            >
-              View menu <ArrowRight size={14} />
-            </Link>
-            <Link
-              to="/location"
-              className="border border-white/40 text-white px-7 py-3 label text-[10px] hover:border-gold hover:text-gold transition-colors"
-            >
-              Find us
-            </Link>
-          </div>
+      {/* Centered content */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-lg">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-6 h-px bg-ash-light" />
+          <span className="label text-ash-light">Third Wave Coffee Club</span>
+          <div className="w-6 h-px bg-ash-light" />
         </div>
 
-        <div className="relative aspect-[4/5] border border-gold/20 flex items-center justify-center overflow-hidden bg-gold/[0.03]">
-          <span className="font-serif italic font-bold text-white/[0.04] text-[220px] leading-none absolute select-none">
-            k
-          </span>
-          <div className="text-center relative z-10">
-            <div className="w-6 h-px bg-gold/30 mx-auto mb-3" />
-            <span className="label text-ash/40 text-[8px]">shop photo</span>
-            <div className="w-6 h-px bg-gold/30 mx-auto mt-3" />
-          </div>
-          <span className="absolute top-3 left-3 w-4 h-4 border-t border-l border-gold/35" />
-          <span className="absolute top-3 right-3 w-4 h-4 border-t border-r border-gold/35" />
-          <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-gold/35" />
-          <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-gold/35" />
+        <h1 className="font-main font-bold text-paper leading-none text-6xl md:text-8xl mb-2 tracking-tight">
+          Kinfolk
+        </h1>
+
+        <span className="label text-primary text-[10px] md:text-xs mb-8">
+          Specialty Coffee
+        </span>
+
+        <p className="text-paper/85 font-medium text-sm leading-relaxed max-w-sm mb-9">
+          Third wave specialty coffee where every cup tells a story. Come for
+          the coffee, stay for the community.
+        </p>
+
+        <div className="flex gap-3 flex-wrap justify-center">
+          <Link
+            to="/menu"
+            className="bg-paper text-ink px-7 py-3 label text-[10px] flex items-center gap-2 hover:bg-primary transition-colors"
+          >
+            View menu <ArrowRight size={14} />
+          </Link>
+          <Link
+            to="/location"
+            className="border border-paper/40 text-paper px-7 py-3 label text-[10px] hover:border-paper hover:bg-white/10 transition-colors"
+          >
+            Find us
+          </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }
