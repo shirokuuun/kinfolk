@@ -28,10 +28,10 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-ink border-b border-white/10">
+    <header className="fixed top-0 inset-x-0 z-50 bg-stone-800 border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/landing" className="flex items-center">
           <span className="font-main font-bold text-2xl text-paper tracking-tight">
             Kinfolk
           </span>
