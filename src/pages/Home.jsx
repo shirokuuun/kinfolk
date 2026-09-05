@@ -1,17 +1,15 @@
-import Hero from '../components/sections/Hero'
-import CoffeePreview from '../components/sections/CoffeePreview'
-import ShopStory from '../components/sections/ShopStory'
-import SnacksPreview from '../components/sections/SnacksPreview'
-import ThirdWaveStory from '../components/sections/ThirdWaveStory'
+import Hero from "../components/sections/Hero";
+import MenuPreview from "../components/sections/MenuPreview";
+import ShopStory from "../components/sections/ShopStory";
+import ThirdWaveStory from "../components/sections/ThirdWaveStory";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <CoffeePreview />
+      <MenuPreview />
       <ShopStory />
-      <SnacksPreview />
       <ThirdWaveStory />
     </>
-  )
+  );
 }
